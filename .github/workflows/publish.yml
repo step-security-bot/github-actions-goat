@@ -9,13 +9,13 @@ jobs:
       - uses: step-security/harden-runner@95691d3d1cfc1f403f673ccbe70465d7c4254108
         with:
           egress-policy: audit
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: npm install
         run: |
           cd ./src/exfiltration-demo
           npm install
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@v5
+        uses: elgohr/Publish-Docker-Github-Action@eb53b3ec07136a6ebaed78d8135806da64f7c7e2 # v5
         with:
           name: ${{ github.repository }}/prod:latest
           username: ${{ github.actor }}
